@@ -16,17 +16,30 @@
         <% if user_signed_in? %>
           <li>
             <%= link_to about_path, class: "nav-link text-light" do %>
-               about
+              <button type="button" class="btn btn-outline-dark">
+                <i class="fa-solid fa-clipboard-question"></i> About
+              </button>
             <% end %>
           </li>
           <li>
             <%= link_to posts_path, class: "nav-link text-light" do %>
-              一覧
+              <button type="button" class="btn btn-outline-dark">
+                <i class="fa-solid fa-images"></i> 一覧
+              </button>
             <% end %>
           </li>
           <li>
-            <%= link_to user_path(current_user.id), class: "nav-link text-dark" do %>
-              マイページ
+            <%= link_to user_path(current_user.id), class: "nav-link text-light" do %>
+              <button type="button" class="btn btn-outline-dark">
+                <i class="fa-solid fa-user"></i> マイページ
+              </button>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to destroy_user_session_path, method: :delete, class: "nav-link text-light" do %>
+              <button type="button" class="btn btn-outline-dark">
+                <i class="fa-solid fa-right-from-bracket"></i> ログアウト
+              </button>
             <% end %>
           </li>
 
@@ -44,22 +57,30 @@
         <% else %>
           <li>
             <%= link_to root_path, class: "nav-link text-dark" do %>
-              Home
+              <button type="button" class="btn btn-outline-dark">
+                <i class="fa-solid fa-house"></i> Home
+              </button>
             <% end %>
           </li>
           <li>
             <%= link_to about_path, class: "nav-link text-dark" do %>
-              About
+              <button type="button" class="btn btn-outline-dark">
+                <i class="fa-solid fa-clipboard-question"></i> About
+              </button>
             <% end %>
           </li>
           <li>
             <%= link_to new_user_registration_path, class: "nav-link text-dark" do %>
-              新規登録
+              <button type="button" class="btn btn-outline-dark">
+                <i class="fa-solid fa-user-plus"></i> 新規登録
+              </button>
             <% end %>
           </li>
           <li>
             <%= link_to new_user_session_path, class: "nav-link text-dark" do %>
-              ログイン
+              <button type="button" class="btn btn-outline-dark">
+                <i class="fa-solid fa-user-check"></i> ログイン
+              </button>
             <% end %>
           </li>
         <% end %>

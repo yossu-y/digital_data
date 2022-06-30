@@ -1,1 +1,22 @@
-<h3>トップ画面</h3>
+<% if user_signed_in? %>
+  <div class="mx-3 mt-5 text-center"><h1 class="mb-5 top-title">サイト名</h1></div>
+    <div class="col-5 col-md-5 col-sm-5 mx-auto px-0 my-4">
+      <div class="row">
+        <%= link_to "マイページに戻る", user_path(current_user.id), class: "btn btn-login btn-sm btn-block mb-3 text-center" %>
+      </div>
+    </div>
+<% else %>
+  <div class="mx-3 mt-5 text-center"><h1 class="mb-5 top-title">サイト名</h1></div>
+    <div class="col-5 col-md-5 col-sm-5 mx-auto px-0 my-4">
+      <div class="row">
+        <%= link_to new_user_session_path, class: "btn btn-outline-dark btn-sm btn-block mb-4 d-flex align-items-center justify-content-center", style: "height: 50px" do %>
+          <i class="fa-solid fa-user-check"></i>&nbsp;ログイン
+        <% end %>
+      </div>
+      <div class="row">
+        <%= link_to new_user_registration_path, class: "btn btn-outline-dark btn-sm btn-block mb-3 d-flex align-items-center justify-content-center", style: "height: 50px" do %>
+          <i class="fa-solid fa-user-plus"></i>&nbsp;新規登録
+        <% end %>
+      </div>
+    </div>
+<% end %>

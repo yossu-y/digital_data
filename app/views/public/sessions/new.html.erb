@@ -1,26 +1,18 @@
-<h2>Log in</h2>
+<div class="login">
+  <header class="login-head">
+    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3219/logo.svg" alt="" />
+    <h1 class="login-title">サイト名</h1>
+  </header>
 
-<%= form_with model: @user, url: user_session_path do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+  <%= form_with model: @user, url: user_session_path, class: "form" do |f| %>
+    <div class="form-group" style="margin: 0">
+      <%= f.email_field :email, placeholder: "メールアドレス", autocomplete: "email", class: "form-input" %>
     </div>
+    <div class="form-group" style="margin: 0">
+      <%= f.password_field :password, placeholder: "パスワード", autocomplete: "current-password", class: "form-input" %>
+    </div>
+    <%= f.submit "ログイン", class: "login-btn" %>
   <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
+</div>
 
 <%= render "public/shared/links" %>
