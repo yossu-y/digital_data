@@ -1,2 +1,10 @@
-<h1>Public::Posts#show</h1>
-<p>Find me in app/views/public/posts/show.html.erb</p>
+<div class="container px-0">
+  <div class="row">
+    <div class="col-11 col-md-11 col-sm-12 mx-auto px-0 my-5">
+      <%= @post.name %>
+      <%= @post.introduction %>
+      <%= @post.genre.name %>
+      <%= @post.price %>
+    </div>
+  </div>
+</div
