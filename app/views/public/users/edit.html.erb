@@ -1,2 +1,19 @@
-<h1>Public::Users#edit</h1>
-<p>Find me in app/views/public/users/edit.html.erb</p>
+<div class="login">
+  <header class="login-head">
+    <%= image_tag @user.get_profile_image, class: "rounded-circle profile-img" %>
+  </header>
+
+  <%= form_with model: @user, local: true, class: "form" do |f| %>
+    <div class="form-group">
+      <%= f.file_field :profile_image, accept: "image/*" %>
+    </div>
+    <div class="form-group" style="margin: 0">
+      <%= f.text_field :screen_name, class: "form-input" %>
+    </div>
+    <div class="form-group" style="margin: 0">
+      <%= f.text_area :introduction, class: "form-input", rows: 5 %>
+    </div>
+    <%= f.submit "変更", class: "login-btn" %>
+  <% end %>
+</div>
+

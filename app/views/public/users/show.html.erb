@@ -1,2 +1,29 @@
-<h1>Public::Users#show</h1>
-<p>Find me in app/views/public/users/show.html.erb</p>
+<div class="container px-0">
+  <div class="row">
+    <div class="col-11 col-md-11 col-sm-12 mx-auto px-0 my-5">
+      <div class="mx-4 mb-5"><h3 class="mini-title">マイページ</h3></div>
+        <table class="table">
+          <tr>
+            <td rowspan="2" width="30%">
+              <%= image_tag @user.get_profile_image, class: "rounded-circle profile-img" %>
+            </td>
+            <td><%= @user.screen_name %></td>
+            <td><%= link_to "プロフィール編集", edit_user_path(@user) %></td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              出品数
+              フォロー・フォロワー
+            </td>
+          </tr>
+          <tr>
+            <td colspan="3" style="white-space: pre-wrap"><%= @user.introduction %></td>
+          </tr>
+        </table>
+
+        <div>
+          カードで出品を表示
+        </div>
+    </div>
+  </div>
+</div>
