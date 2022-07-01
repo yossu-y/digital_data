@@ -1,24 +1,44 @@
-# README
+# <未定>考え中。。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
 
-Things you may want to cover:
+### サイトテーマ
+誰でもデジタルデータの売買を行えるサイト<br>
+写真・イラスト・絵・情報等色々なデータの販売が可能
 
-* Ruby version
+### テーマを選んだ理由
+&emsp;
+&emsp;
 
-* System dependencies
 
-* Configuration
 
-* Database creation
+### ターゲットユーザ
+- デジタルデータの売買に興味がある人
+- 自分が書いたイラストや絵を手軽に販売したい人
 
-* Database initialization
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+### 主な利用シーン
+- 好きなクリエイターを応援したい時
 
-* Deployment instructions
 
-* ...
+
+## 設計書
+- ER図 <br>
+   <br>
+- テーブル定義書 <br>
+   <br>
+- アプリケーション詳細設計図 <br>
+   <br>
+
+## 開発環境
+- OS：Linux(CentOS)
+- 言語：HTML,CSS,JavaScript,Ruby,SQL
+- フレームワーク：Ruby on Rails
+- JSライブラリ：jQuery
+- IDE：Cloud9
+
+## 参考サイト
+- ログイン画面デザイン <br>
+  https://deshinon.com/2019/03/03/register-kopipe-css-oshare/ <br>
+
