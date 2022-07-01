@@ -1,2 +1,22 @@
-<h1>Public::Posts#new</h1>
-<p>Find me in app/views/public/posts/new.html.erb</p>
+<div class="login">
+  <header class="login-head">
+    新規投稿
+    <%#= image_tag @user.get_profile_image, class: "rounded-circle profile-img" %>
+  </header>
+
+  <%= form_with model: @post, local: true, class: "form" do |f| %>
+    <div class="form-group">
+      <%= f.file_field :image, accept: "image/*" %>
+    </div>
+    <div class="form-group" style="margin: 0">
+      <%= f.text_field :name, placeholder: "商品名", class: "form-input" %>
+    </div>
+    <div class="form-group" style="margin: 0">
+      <%= f.text_area :introduction, placeholder: "商品説明", class: "form-input", rows: 5 %>
+    </div>
+    <div class="form-group" style="margin: 0">
+      <%= f.text_area :price, placeholder: "金額を入力", class: "form-input" %>
+    </div>
+    <%= f.submit "変更", class: "login-btn" %>
+  <% end %>
+</div>
