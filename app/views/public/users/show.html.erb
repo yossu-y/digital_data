@@ -22,11 +22,10 @@
         </table>
 
         <div>
-          カードで出品を表示
-          <%= link_to "新規投稿", new_post_path %>
+          <%= render "public/posts/index", posts: @posts %>
         </div>
         <div>
-
+          <%= link_to "新規投稿", new_post_path %>
         </div>
     </div>
   </div>

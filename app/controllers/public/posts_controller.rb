@@ -10,7 +10,6 @@ class Public::PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-
   end
 
   def edit
@@ -28,6 +27,12 @@ class Public::PostsController < ApplicationController
   end
 
   def update
+    @post = Post.find(params[:id])
+    if @post.update(post_params)
+      redirect_to posts_path, notice: "更新しました！"
+    else
+      render "edit"
+    end
   end
 
   def destroy
