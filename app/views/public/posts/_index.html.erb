@@ -9,7 +9,7 @@
             <% end %>
           </div>
           <div class="card-title text-center">
-            ￥<%= post.price %>
+            ￥<%= post.price.to_s(:delimited) %>
             <span class="bookmark" style="float: right" id="like_buttons_<%= post.id %>">
               <%= render "public/likes/btn", post: post %>
             </span>
