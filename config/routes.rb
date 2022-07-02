@@ -1,21 +1,5 @@
 Rails.application.routes.draw do
 
-  namespace :admin do
-    get 'users/index'
-    get 'users/show'
-    get 'users/edit'
-  end
-  namespace :public do
-    get 'posts/new'
-    get 'posts/index'
-    get 'posts/show'
-    get 'posts/edit'
-  end
-  namespace :public do
-    get 'users/show'
-    get 'users/edit'
-    get 'users/index'
-  end
   # 利用者用
 
   devise_for :users,skip: [:passwords], controllers: {
@@ -30,7 +14,9 @@ Rails.application.routes.draw do
     get "users/unsubscribe/:id" => "users#unsubscribe", as: "unsubscribe"
     resources :users, only: [:index, :update, :show, :edit]
 
-    resources :posts
+    resources :posts do
+      resource :like, only: [:create, :destroy]
+    end
 
   end
 
