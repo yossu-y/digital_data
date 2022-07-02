@@ -11,4 +11,8 @@ class Post < ApplicationRecord
     (image.attached?)? image: "no-image-icon.jpg"
   end
 
+  def liked_by?(user)
+    likes.exists?(user_id: user.id)
+  end
+
 end

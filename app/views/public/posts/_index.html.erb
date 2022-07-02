@@ -10,6 +10,9 @@
           </div>
           <div class="card-title text-center">
             ￥<%= post.price %>
+            <span class="bookmark" style="float: right" id="like_buttons_<%= post.id %>">
+              <%= render "public/likes/btn", post: post %>
+            </span>
           </div>
         </div>
       <% end %>

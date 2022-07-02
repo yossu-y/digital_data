@@ -1,0 +1,9 @@
+<% if post.liked_by?(current_user) %>
+  <%= link_to post_like_path(post), method: :delete, remote: true do %>
+    <i class="fa-solid fa-bookmark mark" style="color: black;"></i>
+  <% end %>
+<% else %>
+  <%= link_to post_like_path(post), method: :post, remote: true do %>
+    <i class="fa-regular fa-bookmark mark" style="color: black;"></i>
+  <% end %>
+<% end %>
