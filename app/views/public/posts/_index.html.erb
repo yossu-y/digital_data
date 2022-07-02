@@ -1,11 +1,17 @@
 <div class="container px-0">
   <div class="row">
-    <div class="col-11 col-md-11 col-sm-12 mx-auto px-0 my-5">
+    <div class="col-11 col-md-11 col-sm-12 mx-auto px-0 my-5 list">
       <% @posts.each do |post| %>
-        <%= link_to post_path(post) do %>
-          <%= post.name %>
-          <%= post.introduction %><br>
-        <% end %>
+        <div class="card">
+          <div class="card-img">
+            <%= link_to post_path(post) do %>
+              <%= image_tag post.get_image, class: "card-img" %>
+            <% end %>
+          </div>
+          <div class="card-title text-center">
+            ￥<%= post.price %>
+          </div>
+        </div>
       <% end %>
     </div>
   </div>

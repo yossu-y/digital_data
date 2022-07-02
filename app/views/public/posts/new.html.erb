@@ -12,14 +12,15 @@
       <%= f.text_field :name, placeholder: "商品名", class: "form-input" %>
     </div>
     <div class="form-group" style="margin: 0">
+      <%= f.select :genre_id, options_from_collection_for_select(Genre.all, :id, :name), class: "form-control block" %>
+    </div>
+    <div class="form-group" style="margin: 0">
       <%= f.text_area :introduction, placeholder: "商品説明", class: "form-input", rows: 5 %>
     </div>
     <div class="form-group" style="margin: 0">
       <%= f.text_field :price, placeholder: "金額を入力", class: "form-input" %>
     </div>
-    <div class="form-group" style="margin: 0">
-      <%= f.select :genre_id, options_from_collection_for_select(Genre.all, :id, :name), class: "form-control post_genre_id" %>
-    </div>
+
     <%= f.submit "出品する", class: "login-btn" %>
   <% end %>
 </div>

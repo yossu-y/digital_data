@@ -19,7 +19,11 @@ body {
   animation: move 10s ease infinite;
   transform: translate3d(0, 0, 0);
   background: linear-gradient(45deg, #49D49D 10%, #A2C7E5 90%);
-  height: 100vh
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 120px;
+  box-sizing: border-box;
+  word-break: break-all !important;
 }
 
 footer {
@@ -145,3 +149,28 @@ footer {
     height: 200px !important;
   }
 
+ .list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card {
+  margin: 15px !important;
+  width: 40% !important;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px #ccc;
+  flex-basis: 280px;
+  z-index: 10 !important;
+}
+.card-img {
+  padding: 3px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 30px;
+}
+.card-title {
+  font-size: 20px;
+}
