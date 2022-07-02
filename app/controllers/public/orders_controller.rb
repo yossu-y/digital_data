@@ -19,6 +19,8 @@ class Public::OrdersController < ApplicationController
 
   def user_orders
     @orders = current_user.orders.all
+    # @order = Order.find(params[:id])
+    # @post = current_user.posts.find_by(order_id: @order_id)
   end
 
   private
