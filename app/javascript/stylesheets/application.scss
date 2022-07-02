@@ -13,6 +13,10 @@ $color-primary: #ABA194;
   box-sizing: border-box;
 }
 
+header {
+  border-bottom: solid 1px #faebd7;
+}
+
 body {
   font-family: $font-family;
   background-size: 200% 100% !important;
@@ -34,7 +38,7 @@ footer {
   padding-top: 8px;
   letter-spacing: 2px;
   color: black;
-  border-top: solid 1px #000000;
+  border-top: solid 1px #faebd7;
 }
 
 .login {
@@ -162,7 +166,7 @@ footer {
   background: #fff;
   border-radius: 10px;
   box-shadow: 0 2px 5px #ccc;
-  flex-basis: 280px;
+  flex-basis: 275px;
   z-index: 10 !important;
 }
 .card-img {
@@ -181,3 +185,25 @@ footer {
   font-size: 20px;
   margin-right: 10px;
 }
+
+.explanation {
+  font-size: 25px;
+  font-weight: 550;
+}
+
+.info {
+  background-color: #faebd7 !important;
+  border-radius: 10px;
+  padding: 30px;
+  margin-top: 5px;
+}
+
+.table td {
+  border: none !important;
+}
+
+.post-img {
+  max-width: 100%;
+  height: auto;
+}
+

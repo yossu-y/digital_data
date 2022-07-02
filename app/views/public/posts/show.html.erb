@@ -1,10 +1,35 @@
 <div class="container px-0">
   <div class="row">
-    <div class="col-11 col-md-11 col-sm-12 mx-auto px-0 my-5">
-        <%= @post.name %><br>
-        <%= @post.introduction %><br>
-        <%= @post.genre.name %><br>
-        <%= @post.price %>
+    <div class="col-8 col-md-8 col-sm-10 mx-auto px-0 my-5">
+      <table class="table">
+        <tr>
+          <td class="text-center"><%= image_tag @post.get_image, class: "post-img" %></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="explanation">商品名</div>
+            <div class="info"><%= @post.name %></div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="explanation">商品説明</div>
+            <div class="info" style="white-space: pre-wrap"><%= @post.introduction %></div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="explanation">商品ジャンル</div>
+            <div class="info"><%= @post.genre.name %></div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="explanation">商品価格</div>
+            <div class="info"><%= @post.price %></div>
+          </td>
+        </tr>
+      </table>
     </div>
   </div>
   <%= link_to "編集する", edit_post_path(@post) %>

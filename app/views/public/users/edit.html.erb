@@ -1,7 +1,7 @@
 <div class="login">
-  <header class="login-head">
+  <div class="login-head">
     <%= image_tag @user.get_profile_image, class: "rounded-circle profile-img" %>
-  </header>
+  </div>
 
   <%= form_with model: @user, local: true, class: "form" do |f| %>
     <div class="form-group">

@@ -1,10 +1,12 @@
 <div class="login">
-  <header class="login-head">
+  <div class="login-head">
     <h2>編集する</h2>
-    <%#= image_tag @user.get_profile_image, class: "rounded-circle profile-img" %>
-  </header>
+  </div>
 
   <%= form_with model: @post, local: true, class: "form" do |f| %>
+    <div class="form-group text-center">
+      <%= image_tag @post.get_image, class: "rounded-circle profile-img" %>
+    </div>
     <div class="form-group">
       <%= f.file_field :image, accept: "image/*" %>
     </div>
