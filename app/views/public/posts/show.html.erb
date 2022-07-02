@@ -1,10 +1,11 @@
 <div class="container px-0">
   <div class="row">
     <div class="col-11 col-md-11 col-sm-12 mx-auto px-0 my-5">
-      <%= @post.name %>
-      <%= @post.introduction %>
-      <%= @post.genre.name %>
-      <%= @post.price %>
+        <%= @post.name %><br>
+        <%= @post.introduction %><br>
+        <%= @post.genre_id %><br>
+        <%= @post.price %>
     </div>
   </div>
+  <%= link_to "編集する", edit_post_path(@post) %>
 </div

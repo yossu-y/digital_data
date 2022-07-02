@@ -1,6 +1,6 @@
 <div class="login">
   <header class="login-head">
-    新規投稿
+    <h2>出品する</h2>
     <%#= image_tag @user.get_profile_image, class: "rounded-circle profile-img" %>
   </header>
 
@@ -18,8 +18,8 @@
       <%= f.text_field :price, placeholder: "金額を入力", class: "form-input" %>
     </div>
     <div class="form-group" style="margin: 0">
-      <%= f.select :genre_id, options_from_collection_for_select(Genre.all, :id, :name) %>
+      <%= f.select :genre_id, options_from_collection_for_select(Genre.all, :id, :name), class: "form-control post_genre_id" %>
     </div>
-    <%= f.submit "変更", class: "login-btn" %>
+    <%= f.submit "出品する", class: "login-btn" %>
   <% end %>
 </div>
