@@ -14,13 +14,13 @@
             <td colspan="2">
               出品数
               フォロー・フォロワー
+              <%= link_to "購入履歴", user_orders_path(@user) %>
             </td>
           </tr>
           <tr>
             <td colspan="3" style="white-space: pre-wrap"><%= @user.introduction %></td>
           </tr>
         </table>
-
         <div>
           <%= render "public/posts/index", posts: @posts %>
         </div>
