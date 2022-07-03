@@ -42,6 +42,14 @@ class Public::PostsController < ApplicationController
     redirect_to posts_path, notice: "出品を削除しました"
   end
 
+  def order_posts
+    @user = User.find(params[:id])
+    # @posts = @order.posts.all
+    # @post = current_user.posts.find_by(order_id: @order_id)
+    # @orders = @user.orders.all
+    @posts = @user.posts.all
+  end
+
   private
 
   def post_params

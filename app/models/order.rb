@@ -2,7 +2,7 @@ class Order < ApplicationRecord
   has_one_attached :image
 
   belongs_to :user
-  belongs_to :post
+  has_many :posts
 
   def get_image
     (image.attached?)? image: "no-image-icon.jpg"
