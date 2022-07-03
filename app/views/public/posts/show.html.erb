@@ -46,5 +46,6 @@
       <%# end %>
       <%= link_to "購入する", post_orders_path(@post.id) %>
     </div>
-    <%= link_to "編集する", edit_post_path(@post) %>
+    <%= link_to "編集する", edit_post_path(@post) %><br>
+    <%= link_to "削除する", post_path, method: :delete %>
 </div>

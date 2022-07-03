@@ -37,8 +37,9 @@ class Public::PostsController < ApplicationController
   end
 
   def destroy
-    @post.destory
-    redirect_to posts_path
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to posts_path, notice: "出品を削除しました"
   end
 
   private
