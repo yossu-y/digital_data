@@ -15,5 +15,13 @@ class Post < ApplicationRecord
   def liked_by?(user)
     likes.exists?(user_id: user.id)
   end
+  
+  def self.search(search, keyword)
+    if search != ""
+      @post = Post.where(["name LIKE(?)", "%#{keyword}%"])
+    else
+      @post = Post.all
+    end
+  end
 
 end

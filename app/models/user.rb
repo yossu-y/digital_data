@@ -11,6 +11,15 @@ class User < ApplicationRecord
   has_many :orders, dependent: :destroy
 
 
+  def self.search(search, keyword)
+    if search != ""
+      @user = User.where(["name LIKE(?)", "%#{keyword}%"])
+    else
+      @user = User.all
+    end
+  end
+
+
 
   def get_profile_image
     (profile_image.attached?)? profile_image: "no-image-icon.jpg"

@@ -21,6 +21,8 @@ Rails.application.routes.draw do
       get "/orders" => "orders#order"
     end
 
+    get "searches/search" => "searches/search", as: "search"
+
   end
 
   # 管理者用
