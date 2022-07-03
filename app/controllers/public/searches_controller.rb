@@ -6,7 +6,7 @@ class Public::SearchesController < ApplicationController
     if @keyword == "ユーザー"
       @users = User.search(params[:search], params[:keyword])
     else @keyword = "出品"
-      @post = Post.search(params[:search], params[:keyword])
+      @posts = Post.search(params[:search], params[:keyword])
     end
 
   end

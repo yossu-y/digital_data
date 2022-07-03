@@ -10,8 +10,8 @@
         <tbody>
         <% users.each do |user| %>
           <tr style="cursor: pointer" onclick="window.location.href='<%= user_path(user) %>'" onmouseover="this.style.backgroundColor='#dcdcdc'" onmouseout="this.style.backgroundColor='#fff'">
-            <td><%= image_tag user.get_profile_image, class: "rounded-circle" %></td>
-            <td><%= user.name %></td>
+            <td width="15%"><%= image_tag user.get_profile_image, class: "rounded-circle users-img" %></td>
+            <td width="15%"><%= user.name %></td>
             <td><%= user.introduction %></td>
           </tr>
         <% end %>

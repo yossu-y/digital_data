@@ -198,8 +198,13 @@ footer {
   margin-top: 5px;
 }
 
+.table {
+  background-color: #ffffff;
+}
+
 .table td {
   border: none !important;
+  vertical-align: middle;
 }
 
 .post-img {
@@ -211,5 +216,15 @@ footer {
 .user-post-img {
   max-width: 100%;
   height: auto;
+}
+
+.search-form {
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+
+.users-img {
+  height: 100px;
+  width: 100px;
 }
 
