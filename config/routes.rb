@@ -14,8 +14,11 @@ Rails.application.routes.draw do
     get "users/unsubscribe/:id" => "users#unsubscribe", as: "unsubscribe"
     resources :users, only: [:index, :update, :show, :edit]
 
+    get "users/:id/orders" => "orders#user_orders", as: "user_orders"
     resources :posts do
       resource :like, only: [:create, :destroy]
+      resources :orders, only: [:create]
+      get "/orders" => "orders#order"
     end
 
   end

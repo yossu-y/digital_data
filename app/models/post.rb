@@ -6,6 +6,7 @@ class Post < ApplicationRecord
   belongs_to :user
   has_many :likes, dependent: :destroy
   belongs_to :genre
+  has_one :order, dependent: :destroy
 
   def get_image
     (image.attached?)? image: "no-image-icon.jpg"
