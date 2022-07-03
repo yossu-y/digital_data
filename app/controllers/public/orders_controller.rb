@@ -1,5 +1,5 @@
 class Public::OrdersController < ApplicationController
-  before_action :authenticate_user!, only: :create
+  before_action :authenticate_user!
 
   def create
     @post = Post.find(params[:post_id])
@@ -7,7 +7,7 @@ class Public::OrdersController < ApplicationController
     @order = Order.new(order_params)
     # @order = current_user.orders.find_by(post_id: params[:order][:post_id])
     @order.save
-    redirect_to posts_path, notice: "購入が完了しました。ありがとうございました！"
+      redirect_to posts_path, notice: "購入が完了しました。ありがとうございました！"
   end
 
   def order
@@ -30,7 +30,7 @@ class Public::OrdersController < ApplicationController
   private
 
   def order_params
-    params.permit(:post_id, :user_id)
+    params.require(:order).permit(:post_id, :user_id)
   end
 
 end
