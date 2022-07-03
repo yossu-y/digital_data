@@ -1,5 +1,5 @@
-<% if @keyword == "ユーザー" %>
+<% if @range == "ユーザー" %>
   <%= render "public/users/index", users: @users %>
-<% else @keyword == "出品" %>
+<% else @range == "出品" %>
   <%= render "public/posts/index", posts: @posts %>
 <% end %>
