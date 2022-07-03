@@ -4,7 +4,11 @@
       <table class="table">
         <tr>
           <td class="text-center">
-            <%= image_tag @post.get_image, class: "post-img" %>
+            <% if current_user == @post.user %>
+              <%= image_tag @post.get_image, class: "user-post-img" %>
+            <% else %>
+              <%= image_tag @post.get_image, class: "post-img" %>
+            <% end %>
           </td>
         </tr>
         <tr>

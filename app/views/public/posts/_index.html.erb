@@ -1,11 +1,15 @@
 <div class="container px-0">
   <div class="row">
     <div class="col-11 col-md-12 col-sm-12 mx-auto px-0 my-5 list">
-      <% @posts.each do |post| %>
+      <% posts.each do |post| %>
         <div class="card">
           <div class="card-img">
             <%= link_to post_path(post) do %>
-              <%= image_tag post.get_image, class: "post-img" %>
+              <% if current_user == post.user %>
+                <%= image_tag post.get_image, class: "user-post-img" %>
+              <% else %>
+                <%= image_tag post.get_image, class: "post-img" %>
+              <% end %>
             <% end %>
           </div>
           <div class="card-title text-center">
@@ -18,4 +22,4 @@
       <% end %>
     </div>
   </div>
-</div
+</div>
