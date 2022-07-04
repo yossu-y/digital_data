@@ -21,7 +21,7 @@ Rails.application.routes.draw do
       get "/orders" => "orders#order"
     end
 
-    get "genre_posts" => "genres#genre_posts", as: "genre"
+    resources :genres, only: [:show]
 
     get "searches/search" => "searches/search", as: "search"
 

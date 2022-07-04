@@ -1,8 +1,8 @@
 class Public::GenresController < ApplicationController
 
-  def genre_posts
+  def show
     # @genres = Genre.all
-    @genre = Genre.find(params[:genre_id])
+    @genre = Genre.find(params[:id])
   end
 
 end
