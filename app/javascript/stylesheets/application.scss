@@ -236,3 +236,30 @@ footer {
   width: 80px !important;
   height: 80px !important;
 }
+
+
+.menu h3 {
+  margin: 0 0 1em 0;
+  font-size: 19px;
+  cursor: pointer;
+  color: #5e78c1;
+}
+
+.menu h3:hover {
+  color: #b04188;
+  text-decoration: underline;
+}
+
+.menu ul {
+  margin: 0 0 1em 0;
+  font-size: 14px;
+}
+
+.hidden {
+  display: none;
+}
+
+.menu li {
+  margin-left: 60px;
+  padding: 4px;
+}
