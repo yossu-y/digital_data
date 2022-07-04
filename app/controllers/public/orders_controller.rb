@@ -5,7 +5,6 @@ class Public::OrdersController < ApplicationController
     @post = Post.find(params[:post_id])
     @post.user_id = current_user.id
     @order = Order.new(order_params)
-    # @order = current_user.orders.find_by(post_id: params[:order][:post_id])
     @order.save
       redirect_to posts_path, notice: "購入が完了しました。ありがとうございました！"
   end
@@ -14,13 +13,24 @@ class Public::OrdersController < ApplicationController
     @post = Post.find(params[:post_id])
   end
 
+  def index
+    #@posts = @order.posts.all
+    # @post = current_user.posts.find_by(order_id: @order_id)
+    # @orders = @user.orders.all
+    # @posts = @user.posts.all
+    @posts = Post.all
+  end
+
+  def show
+  end
+
   def thanks
   end
 
   private
 
   def order_params
-    params.require(:order).permit(:post_id, :user_id)
+    params.permit(:post_id, :user_id)
   end
 
 end

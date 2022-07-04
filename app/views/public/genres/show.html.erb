@@ -1,9 +1,17 @@
 <div class="container px-0">
   <div class="row">
+    <div class="col-8 col-md-8 col-sm-8 mx-auto px-0 mt-5 text-center">
+      <% @genres.each do |genre| %>
+        <%= link_to genre_path(genre), class: "text-light" do %>
+          <button type="button" class="btn btn-outline-dark"><%= genre.name %></button>
+        <% end %>
+      <% end %>
+    </div>
     <div class="col-11 col-md-11 col-sm-12 mx-auto px-0 my-5">
       <div class="mx-4 mb-5">
         <h3 class="mini-title">”<%= @genre.name %>”の出品</h3>
       </div>
+      <div class="list">
         <% @genre.posts.each do |post| %>
           <div class="card">
             <div class="card-img">
@@ -23,6 +31,7 @@
             </div>
           </div>
         <% end %>
+      </div>
 
     </div>
   </div>

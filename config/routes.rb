@@ -12,9 +12,11 @@ Rails.application.routes.draw do
     get "about" => "homes#about", as: "about"
 
     get "users/unsubscribe/:id" => "users#unsubscribe", as: "unsubscribe"
-    resources :users, only: [:index, :update, :show, :edit]
+    resources :users, only: [:index, :update, :show, :edit] do
+      get "orders" => "orders#index"
+      get "orders/:id" => "orders#show"
+    end
 
-    get "users/:id/order_posts" => "posts#order_posts", as: "user_orders"
     resources :posts do
       resource :like, only: [:create, :destroy]
       resources :orders, only: [:create]
