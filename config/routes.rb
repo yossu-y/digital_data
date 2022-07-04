@@ -1,10 +1,5 @@
 Rails.application.routes.draw do
 
-  namespace :admin do
-    get 'posts/index'
-    get 'posts/show'
-    get 'posts/edit'
-  end
   # 利用者用
 
   devise_for :users,skip: [:passwords], controllers: {
@@ -25,6 +20,8 @@ Rails.application.routes.draw do
       resources :orders, only: [:create]
       get "/orders" => "orders#order"
     end
+
+    get "genre/posts" => "genres#genre_posts", as: "genre"
 
     get "searches/search" => "searches/search", as: "search"
 

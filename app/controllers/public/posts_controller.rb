@@ -11,6 +11,7 @@ class Public::PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @order = Order.new
+    # @genre = Genre.find(params[:genre_id])
   end
 
   def edit
