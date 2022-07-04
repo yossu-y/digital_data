@@ -17,6 +17,10 @@ header {
   border-bottom: solid 1px #faebd7;
 }
 
+.navbar-toggler {
+  border: 2px solid #ffffff !important;
+}
+
 body {
   font-family: $font-family;
   background-size: 200% 100% !important;
