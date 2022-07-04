@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
 
+  namespace :admin do
+    get 'posts/index'
+    get 'posts/show'
+    get 'posts/edit'
+  end
   # 利用者用
 
   devise_for :users,skip: [:passwords], controllers: {
@@ -36,6 +41,8 @@ Rails.application.routes.draw do
     resources :users, only: [:index, :show, :edit, :update]
 
     resources :genres, only: [:index, :edit, :create, :update]
+
+    resources :posts, only: [:index, :show, :update, :destroy, :edit]
 
 
   end

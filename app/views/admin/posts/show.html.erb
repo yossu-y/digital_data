@@ -1,0 +1,61 @@
+<div class="container px-3">
+  <div class="row">
+    <div class="col-12 col-md-12 col-sm-12 mx-auto px-0 my-5">
+    <div class="mx-3"><h3 class="mb-4 mini-title">出品詳細</h3></div>
+      <table class="table table-show">
+        <tr>
+          <td class="text-center">
+            <%= image_tag @post.get_image, class: "profile-img" %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="explanation">商品ID</div>
+            <div class="info"><%= @post.id %></div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="explanation">出品日</div>
+            <div class="info"><%= @post.created_at.strftime("%Y年%m月%d日 %H:%M") %></div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="explanation">出品者（氏名）</div>
+            <div class="info"><%= @post.user.name %></div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="explanation">出品者（ニックネーム）</div>
+            <div class="info"><%= @post.user.screen_name %></div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="explanation">商品名</div>
+            <div class="info"><%= @post.name %></div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="explanation">商品説明</div>
+            <div class="info"><%= @post.introduction %></div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="explanation">金額</div>
+            <div class="info"><%= @post.price %></div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="explanation"><%= link_to "投稿を削除", admin_post_path(@post), method: :delete %></div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

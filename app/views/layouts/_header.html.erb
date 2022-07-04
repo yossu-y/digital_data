@@ -45,15 +45,21 @@
 
         <% elsif admin_signed_in? %>
           <li>
-            <%= link_to admin_users_path, class: "nav-link text-dark" do %>
-              <button type="button" class="btn btn-outline-dark">会員一覧</button>
-            <% end %>
-          </li>
-          <li>
             <%= link_to admin_genres_path, class: "nav-link text-dark" do %>
               <button type="button" class="btn btn-outline-dark">ジャンル一覧</button>
             <% end %>
           </li>
+          <li>
+            <%= link_to admin_posts_path, class: "nav-link text-dark" do %>
+              <button type="button" class="btn btn-outline-dark">出品一覧</button>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to admin_users_path, class: "nav-link text-dark" do %>
+              <button type="button" class="btn btn-outline-dark">会員一覧</button>
+            <% end %>
+          </li>
+
           <li style="margin-top: 1px">
             <%= link_to destroy_admin_session_path, method: :delete, class: "nav-link text-light" do %>
               <button type="button" class="btn btn-outline-dark">Log out</button>
