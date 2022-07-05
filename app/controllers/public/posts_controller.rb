@@ -44,6 +44,12 @@ class Public::PostsController < ApplicationController
     redirect_to posts_path, notice: "出品を削除しました"
   end
 
+  def like_posts
+    @user = User.find(params[:user_id])
+    @likes = @user.likes.all
+    @like_posts = Post.find(@likes.pluck(:post_id))
+  end
+
   private
 
   def post_params

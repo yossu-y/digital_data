@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     resources :users, only: [:index, :update, :show, :edit] do
       get "orders" => "orders#index"
       get "orders/:id" => "orders#show"
+      get "like_posts" => "posts#like_posts", as: "like_posts"
     end
 
     resources :posts do

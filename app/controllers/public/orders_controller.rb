@@ -3,7 +3,9 @@ class Public::OrdersController < ApplicationController
 
   def create
     @order = Order.new(order_params)
+    @order.user_id = current_user.id
     @order.save
+    # current_user.orders.create(post_id: post.id)
       redirect_to posts_path, notice: "購入が完了しました。ありがとうございました！"
   end
 
@@ -12,12 +14,16 @@ class Public::OrdersController < ApplicationController
   end
 
   def index
+    @user = User.find(params[:user_id])
+    @orders = @user.orders.all
+    @order_posts = Post.find(@orders.pluck(:post_id))
     # @post = current_user.posts.find_by(order_id: @order_id)
     # @orders = @user.orders.all
     # @posts = @user.posts.all
-    @order = current_user.orders.all
-    @posts = Post.all
-    # @posts = current_user.orders.find_by(post_id: @post_id)
+    # @order = current_user.orders.all
+    # @posts = Post.all
+    # @order = Order.find(params[:id])
+    # @posts = current_user.posts.find_by(order_id: @order_id)
   end
 
   def show
