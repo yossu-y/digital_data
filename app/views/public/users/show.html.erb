@@ -8,13 +8,25 @@
               <%= image_tag @user.get_profile_image, class: "rounded-circle profile-img" %>
             </td>
             <td><%= @user.screen_name %></td>
-            <td><%= link_to "プロフィール編集", edit_user_path(@user) %></td>
+            <td>
+              <%= link_to edit_user_path(@user), class: "btn btn-outline-dark" do %>
+                <i class="fa-solid fa-user"></i> プロフィール編集
+              <% end %>
+            </td>
           </tr>
           <tr>
             <td colspan="2">
-              出品数
-              <%= link_to "購入履歴", user_orders_path(@user) %>
-              <%= link_to "ブックマーク", user_like_posts_path(@user) %>
+              <% if @user == current_user %>
+                <%= link_to user_orders_path(@user), class: "btn btn-outline-dark" do %>
+                  <i class="fa-solid fa-bag-shopping"></i> 購入履歴
+                <% end %>
+                <%= link_to user_orders_path(@user), class: "btn btn-outline-dark" do %>
+                  <i class="fa-solid fa-coins"></i> 販売履歴
+                <% end %>
+                <%= link_to user_like_posts_path(@user), class: "btn btn-outline-dark" do %>
+                  <i class="fa-solid fa-bookmark"></i> ブックマーク
+                <% end %>
+              <% end %>
             </td>
           </tr>
           <tr>
