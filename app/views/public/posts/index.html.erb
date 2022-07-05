@@ -1,4 +1,4 @@
-<div class="col-4 col-md-4 col-sm-4 mx-auto px-0 mt-5">
+<div class="col-10 col-md-10 col-sm-10 mx-auto px-0 mt-5 text-center">
   <% @genres.each do |genre| %>
     <%= link_to genre_path(genre), class: "text-light" do %>
       <button type="button" class="btn btn-outline-dark"><%= genre.name %></button>
