@@ -1,18 +1,29 @@
 <div class="container px-0">
   <div class="row">
-    <div class="col-8 col-md-8 col-sm-10 mx-auto px-0 my-5">
-      <table class="table">
+    <div class="col-11 col-md-11 col-sm-11 mx-auto px-0 my-5">
+      <table class="table table-hover table-inverse table-show">
+        <thead>
+          <tr>
+            <th>商品画像</th>
+            <th>商品名</th>
+            <th>金額</th>
+            <th>出品者</th>
+            <th width="10%">詳細</th>
+          </tr>
+        </thead>
+        <tbody>
         <% @order_posts.each do |post| %>
-        <tr>
-          <td><%= post.name %></td>
-        </tr>
-        <tr>
-          <td><%#= order.post.created_at.strftime("%Y年%m月%d日 %H:%M") %></td>
-        </tr>
+          <tr>
+            <td width="10%"><%= image_tag post.get_image, class: "post-mini-img" %></td>
+            <td><%= post.name %></td>
+            <td><%= post.price %></td>
+            <td><%= post.user.screen_name %></td>
+            <td><%= link_to "詳細", admin_post_path(post), class: "btn btn-secondary btn-sm" %></td>
+          </tr>
         <% end %>
+        </tbody>
       </table>
-      購入履歴一覧を表示し、<br>
-      購入したものはぼかしがなくなってダウンロードできる
+
     </div>
   </div>
 </div>
