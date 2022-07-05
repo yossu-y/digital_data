@@ -1,13 +1,13 @@
 <div class="container px-0">
   <div class="row">
-    <div class="col-8 col-md-8 col-sm-8 mx-auto px-0 mt-5 text-center">
+    <div class="col-11 col-md-10 col-sm-10 mx-auto px-0 mt-5 text-center">
       <% @genres.each do |genre| %>
         <%= link_to genre_path(genre), class: "text-light" do %>
           <button type="button" class="btn btn-outline-dark"><%= genre.name %></button>
         <% end %>
       <% end %>
     </div>
-    <div class="col-11 col-md-11 col-sm-12 mx-auto px-0 my-5">
+    <div class="col-11 col-md-12 col-sm-12 mx-auto px-0 my-4">
       <div class="mx-4 mb-5">
         <h3 class="mini-title">”<%= @genre.name %>”の出品</h3>
       </div>

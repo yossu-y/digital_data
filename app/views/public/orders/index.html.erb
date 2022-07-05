@@ -4,21 +4,19 @@
       <table class="table table-hover table-inverse table-show">
         <thead>
           <tr>
-            <th>商品画像</th>
+            <th width="15%">商品画像</th>
             <th>商品名</th>
             <th>金額</th>
-            <th>出品者</th>
-            <th width="10%">詳細</th>
+            <th>購入日</th>
           </tr>
         </thead>
         <tbody>
         <% @order_posts.each do |post| %>
-          <tr>
-            <td width="10%"><%= image_tag post.get_image, class: "post-mini-img" %></td>
+          <tr style="cursor: pointer" onclick="window.location.href='<%= post_path(post) %>'" onmouseover="this.style.backgroundColor='#dcdcdc'" onmouseout="this.style.backgroundColor='#fff'">
+            <td><%= image_tag post.get_image, class: "post-mini-img" %></td>
             <td><%= post.name %></td>
-            <td><%= post.price %></td>
-            <td><%= post.user.screen_name %></td>
-            <td><%= link_to "詳細", admin_post_path(post), class: "btn btn-secondary btn-sm" %></td>
+            <td><%= post.price.to_s(:delimited) %></td>
+            <td>日付</td>
           </tr>
         <% end %>
         </tbody>

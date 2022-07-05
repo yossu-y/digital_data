@@ -16,17 +16,18 @@ class Public::OrdersController < ApplicationController
   def index
     @user = User.find(params[:user_id])
     @orders = @user.orders.all
+    # @order = @user,order.find(params[:id])
     @order_posts = Post.find(@orders.pluck(:post_id))
+    # @order = Order.find(params[:id])
     # @post = current_user.posts.find_by(order_id: @order_id)
     # @orders = @user.orders.all
     # @posts = @user.posts.all
     # @order = current_user.orders.all
-    # @posts = Post.all
-    # @order = Order.find(params[:id])
-    # @posts = current_user.posts.find_by(order_id: @order_id)
   end
 
   def show
+    @order = Order.find(params[:id])
+    @post = Post.find(params[:id])
   end
 
   def thanks

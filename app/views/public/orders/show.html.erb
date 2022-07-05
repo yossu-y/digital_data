@@ -4,9 +4,6 @@
       <table class="table table-show">
         <tr>
           <td class="text-center">
-            <% if current_user == @post.user || @order.user %>
-              <%= image_tag @post.get_image, class: "user-post-img" %>
-            <% else %>
               <%= image_tag @post.get_image, class: "post-img" %>
             <% end %>
           </td>
@@ -38,14 +35,5 @@
       </table>
     </div>
   </div>
-    <div>
-      <%#= form_with model: @order, url: post_orders_path(@post) do |f| %>
-        <%#= f.hidden_field :user_id %>
-        <%#= f.hidden_field :post_id %>
-        <%#= f.submit "購入する" %>
-      <%# end %>
-      <%= link_to "購入する", post_orders_path(@post.id) %>
-    </div>
-    <%= link_to "編集する", edit_post_path(@post) %><br>
-    <%= link_to "削除する", post_path, method: :delete %>
+
 </div>

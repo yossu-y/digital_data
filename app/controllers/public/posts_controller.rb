@@ -11,7 +11,7 @@ class Public::PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    @order = Order.new
+    @order = Order.find(params[:id])
     # @genre = Genre.find(params[:genre_id])
   end
 
@@ -47,7 +47,10 @@ class Public::PostsController < ApplicationController
   def like_posts
     @user = User.find(params[:user_id])
     @likes = @user.likes.all
-    @like_posts = Post.find(@likes.pluck(:post_id))
+    @posts = Post.find(@likes.pluck(:post_id))
+    @genres = Genre.all
+    # @genres = Genre.find(@posts.pluck(:genre_id))
+    # @genre = Genre.find(params[:genre_id])
   end
 
   private
