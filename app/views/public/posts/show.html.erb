@@ -5,7 +5,7 @@
         <tr>
           <td class="text-center">
             <% if current_user == @post.user || @order.user %>
-              <%= image_tag @post.get_image, class: "user-post-img" %>
+              <%= image_tag @post.get_image, class: "user-post-img popup" %>
             <% else %>
               <%= image_tag @post.get_image, class: "post-img" %>
             <% end %>
@@ -35,17 +35,37 @@
             <div class="info">￥<%= @post.price.to_s(:delimited) %></div>
           </td>
         </tr>
+        <tr>
+          <td>
+            <div class="explanation">出品者</div>
+            <div class="info" style="padding: 10px">
+              <%= link_to user_path(@post.user), class: "text-dark" do %>
+                <%= image_tag @post.user.get_profile_image, class: "rounded-circle users-img" %>
+                <%= @post.user.screen_name %><br>
+                <%= @post.user.introduction %>
+              <% end %>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="explanation text-right" style="padding: 10px">
+              <% if current_user == @post.user %>
+                <%= link_to post_path, method: :delete, data: {confirm: "本当に削除しますか？"}, class: "btn btn-danger" do %>
+                  <i class="fa-solid fa-trash-can"></i> 削除する
+                <% end %>
+                <%= link_to edit_post_path(@post), class: "btn btn-info" do %>
+                  <i class="fa-solid fa-pen-to-square"></i> 編集する
+                <% end %>
+              <% else %>
+                <%= link_to post_orders_path(@post.id), class: "btn btn-info" do %>
+                  <i class="fa-solid fa-cart-arrow-down"></i> 購入する
+                <% end %>
+              <% end %>
+            </div>
+          </td>
+        </tr>
       </table>
     </div>
   </div>
-    <div>
-      <%#= form_with model: @order, url: post_orders_path(@post) do |f| %>
-        <%#= f.hidden_field :user_id %>
-        <%#= f.hidden_field :post_id %>
-        <%#= f.submit "購入する" %>
-      <%# end %>
-      <%= link_to "購入する", post_orders_path(@post.id) %>
-    </div>
-    <%= link_to "編集する", edit_post_path(@post) %><br>
-    <%= link_to "削除する", post_path, method: :delete %>
 </div>

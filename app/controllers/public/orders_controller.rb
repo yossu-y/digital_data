@@ -6,7 +6,7 @@ class Public::OrdersController < ApplicationController
     @order.user_id = current_user.id
     @order.save
     # current_user.orders.create(post_id: post.id)
-      redirect_to posts_path, notice: "購入が完了しました。ありがとうございました！"
+      redirect_to user_path(current_user.id), notice: "購入が完了しました。ありがとうございました！"
   end
 
   def order
