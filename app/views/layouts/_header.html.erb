@@ -1,4 +1,4 @@
-
+<header>
   <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container-fluid">
       <!-- ログインしていない状態はトップページにログインしている状態は記事一覧へ -->
@@ -29,19 +29,28 @@
             <% end %>
           </li>
           <li>
-            <%= link_to user_path(current_user.id), class: "nav-link text-light" do %>
+            
+          </li>
+          <li>
+            <%= link_to user_like_posts_path(@user), class: "nav-link text-light" do %>
               <button type="button" class="btn btn-outline-dark">
-                <i class="fa-solid fa-user"></i> マイページ
+                <i class="fa-solid fa-bookmark"></i> ブックマーク
               </button>
             <% end %>
           </li>
           <li>
-            <%= link_to destroy_user_session_path, method: :delete, class: "nav-link text-light" do %>
+            <%= link_to new_post_path, class: "nav-link text-light" do %>
               <button type="button" class="btn btn-outline-dark">
-                <i class="fa-solid fa-right-from-bracket"></i> ログアウト
+                <i class="fa-solid fa-file-image"></i> 出品
               </button>
             <% end %>
           </li>
+          <li>
+            <%= link_to user_path(current_user.id), class: "nav-link text-light" do %>
+              <%= image_tag current_user.get_profile_image, class: "rounded-circle post-mini-img" %>
+            <% end %>
+          </li>
+
 
         <% elsif admin_signed_in? %>
           <li>
@@ -99,8 +108,9 @@
       </div>
     </div>
   </nav>
+</header>
 
-  <div class="search-form text-right">
+  <div class="search-form text-right" style="margin-top: 10px">
     <% if user_signed_in? %>
       <%= render "public/searches/form" %>
     <% end %>

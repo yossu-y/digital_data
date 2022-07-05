@@ -45,6 +45,22 @@ footer {
   border-top: solid 1px #faebd7;
 }
 
+header li:nth-child(1) {
+  margin-top: 23px;
+}
+header li:nth-child(2) {
+  margin-top: 23px;
+}
+header li:nth-child(3) {
+  margin-top: 23px;
+}
+header li:nth-child(4) {
+  margin-top: 23px;
+}
+header li:nth-child(5) {
+  margin-top: 23px;
+}
+
 .login {
   width: 90%;
   max-width: 340px;
@@ -153,8 +169,8 @@ footer {
   }
 
   .profile-img {
-    width: 200px !important;
-    height: 200px !important;
+    width: 150px !important;
+    height: 150px !important;
   }
 
  .list {
