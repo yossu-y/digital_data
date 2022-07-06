@@ -1,26 +1,25 @@
-<div class="container px-0">
-  <div class="row">
-    <div class="col-11 col-md-12 col-sm-12 mx-auto px-0 my-4 list">
+<div class="row px-4">
+  <div class="col-12 col-md-12 col-sm-12 mx-auto px-2 my-4 list">
 
-      <% posts.each do |post| %>
-        <div class="card">
-          <div class="card-img">
-            <%= link_to post_path(post) do %>
-              <% if current_user == post.user %>
-                <%= image_tag post.get_image, class: "user-post-img" %>
-              <% else %>
-                <%= image_tag post.get_image, class: "post-img" %>
-              <% end %>
+    <% posts.each do |post| %>
+      <div class="card">
+        <div class="card-img">
+          <%= link_to post_path(post) do %>
+            <% if current_user == post.user %>
+              <%= image_tag post.get_image, class: "user-post-img" %>
+            <% else %>
+              <%= image_tag post.get_image, class: "post-img" %>
             <% end %>
-          </div>
-          <div class="card-title text-center">
-            ￥<%= post.price.to_s(:delimited) %>
-            <span class="bookmark" style="float: right" id="like_buttons_<%= post.id %>">
-              <%= render "public/likes/btn", post: post %>
-            </span>
-          </div>
+          <% end %>
         </div>
-      <% end %>
-    </div>
+        <div class="card-title text-center">
+          ￥<%= post.price.to_s(:delimited) %>
+          <span class="bookmark" style="float: right" id="like_buttons_<%= post.id %>">
+            <%= render "public/likes/btn", post: post %>
+          </span>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>
+
