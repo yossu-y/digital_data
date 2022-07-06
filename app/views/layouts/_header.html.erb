@@ -29,10 +29,10 @@
             <% end %>
           </li>
           <li>
-            
+
           </li>
           <li>
-            <%= link_to user_like_posts_path(@user), class: "nav-link text-light" do %>
+            <%= link_to user_like_posts_path(current_user), class: "nav-link text-light" do %>
               <button type="button" class="btn btn-outline-dark">
                 <i class="fa-solid fa-bookmark"></i> ブックマーク
               </button>

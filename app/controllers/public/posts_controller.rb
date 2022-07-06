@@ -7,6 +7,7 @@ class Public::PostsController < ApplicationController
   def index
     @posts = Post.all
     @genres = Genre.all
+    # @order = Order.find(params[:id])
   end
 
   def show
