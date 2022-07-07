@@ -16,6 +16,7 @@ Rails.application.routes.draw do
       get "orders" => "orders#index"
       get "orders/:id" => "orders#show", as: "orders_show"
       get "like_posts" => "posts#like_posts", as: "like_posts"
+      resources :relationship, only: [:create, :destroy]
     end
 
     resources :posts do

@@ -8,11 +8,7 @@
           </td>
           <td><%= @user.screen_name %></td>
           <td>
-            <% if @user == current_user %>
-              <%= link_to edit_user_path(@user), class: "btn btn-outline-dark" do %>
-                <i class="fa-solid fa-user"></i> プロフィール編集
-              <% end %>
-            <% end %>
+            <%= render "public/relationships/btn", user: @user %>
           </td>
         </tr>
         <tr>
