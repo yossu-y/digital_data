@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     get "about" => "homes#about", as: "about"
 
     get "users/unsubscribe/:id" => "users#unsubscribe", as: "unsubscribe"
+    patch "users/withdraw" => "users#withdraw"
     resources :users, only: [:index, :update, :show, :edit] do
       get "orders" => "orders#index"
       get "orders/:id" => "orders#show", as: "orders_show"
