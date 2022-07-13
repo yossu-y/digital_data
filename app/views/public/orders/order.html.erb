@@ -1,9 +1,49 @@
-注文確認
-
-<%= @post.price %>
-
-<%= form_with model: @order, url: post_orders_path, local: true do |f| %>
-  <%= f.hidden_field :user_id %>
-  <%= f.hidden_field :post_id %>
-  <%= f.submit "購入する" %>
-<% end %>
+<div class="container px-0">
+  <div class="row">
+    <div class="col-8 col-md-8 col-sm-10 mx-auto px-0 my-5">
+      注文確認
+      <table class="table table-show">
+        <tr>
+          <td class="text-center">
+            <%= image_tag @post.get_image, class: "user-post-img" %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="explanation">商品名</div>
+            <div class="info"><%= @post.name %></div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="explanation">商品説明</div>
+            <div class="info" style="white-space: pre-wrap"><%= @post.introduction %></div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="explanation">商品ジャンル</div>
+            <div class="info"><%= @post.genre.name %></div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="explanation">商品価格</div>
+            <div class="info">￥<%= @post.price.to_s(:delimited) %></div>
+          </td>
+        </tr>
+         <tr>
+          <td colspan="3">
+            <div class="explanation">
+              <%= form_with model: @order, url: post_orders_path, local: true do |f| %>
+                <%= f.hidden_field :user_id %>
+                <%= f.hidden_field :post_id %>
+                <%= f.submit "購入する" %>
+              <% end %>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

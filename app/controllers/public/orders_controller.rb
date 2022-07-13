@@ -12,6 +12,7 @@ class Public::OrdersController < ApplicationController
   def order
     @order = Order.new
     @post = Post.find(params[:post_id])
+    # @user = User.find(params[:user_id])
   end
 
   def index
