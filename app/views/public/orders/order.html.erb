@@ -16,12 +16,6 @@
         </tr>
         <tr>
           <td>
-            <div class="explanation">商品説明</div>
-            <div class="info" style="white-space: pre-wrap"><%= @post.introduction %></div>
-          </td>
-        </tr>
-        <tr>
-          <td>
             <div class="explanation">商品ジャンル</div>
             <div class="info"><%= @post.genre.name %></div>
           </td>
@@ -37,7 +31,7 @@
             <div class="explanation">
               <%= form_with model: @order, url: post_orders_path, local: true do |f| %>
                 <%= f.hidden_field :user_id %>
-                <%= f.hidden_field :post_id %>
+                <%= f.hidden_field :post_id, :value => @post.id %>
                 <%= f.submit "購入する" %>
               <% end %>
             </div>
