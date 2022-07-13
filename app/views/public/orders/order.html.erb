@@ -3,7 +3,7 @@
 <%= @post.price %>
 
 <%= form_with model: @order, url: post_orders_path, local: true do |f| %>
-  <%#= f.hidden_field :user_id %>
-  <%#= f.hidden_field :post_id %>
+  <%= f.hidden_field :user_id %>
+  <%= f.hidden_field :post_id %>
   <%= f.submit "購入する" %>
 <% end %>

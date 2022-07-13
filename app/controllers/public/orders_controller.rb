@@ -10,13 +10,13 @@ class Public::OrdersController < ApplicationController
   end
 
   def order
+    @order = Order.new
     @post = Post.find(params[:post_id])
   end
 
   def index
     @user = User.find(params[:user_id])
     @orders = @user.orders.all
-    # @order = @user,order.find(params[:id])
     @order_posts = Post.find(@orders.pluck(:post_id))
   end
 
@@ -31,7 +31,7 @@ class Public::OrdersController < ApplicationController
   private
 
   def order_params
-    params.permit(:post_id, :user_id)
+    params.require(:order).permit(:post_id, :user_id)
   end
 
 end
