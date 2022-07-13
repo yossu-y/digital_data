@@ -5,8 +5,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_one_attached :profile_image
-
+  
   has_many :posts, dependent: :destroy
+  has_many :buyed_posts, foreign_key: "buyer_id", class_name: "Post"
+  has_many :sold_posts, -> { where("buyer_id is not NULL") }, foreign_key: "saler_id", class_name: "Post"
   has_many :likes, dependent: :destroy
   has_many :orders, dependent: :destroy
 
@@ -36,8 +38,6 @@ class User < ApplicationRecord
       @user = User.all
     end
   end
-
-
 
   def get_profile_image
     (profile_image.attached?)? profile_image: "no-image-icon.jpg"

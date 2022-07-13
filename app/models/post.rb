@@ -4,6 +4,8 @@ class Post < ApplicationRecord
   default_scope -> { order(updated_at: :desc) }
 
   belongs_to :user
+  belongs_to :saler, class_name: "User"
+  belongs_to :buyer, class_name: "User"
   has_many :likes, dependent: :destroy
   belongs_to :genre
   has_one :order, dependent: :destroy
