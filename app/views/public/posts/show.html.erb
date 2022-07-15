@@ -58,8 +58,8 @@
                 <%= link_to edit_post_path(@post), class: "btn btn-info" do %>
                   <i class="fa-solid fa-pen-to-square"></i> 編集する
                 <% end %>
-              <% elsif current_user == @order.user %>
-                購入済みです
+              <%# elsif current_user == @order.user %>
+                <!--購入済みです-->
               <% else %>
                 <%= link_to post_orders_path(@post.id), class: "btn btn-info" do %>
                   <i class="fa-solid fa-cart-arrow-down"></i> 購入する
