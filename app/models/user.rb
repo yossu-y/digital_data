@@ -10,6 +10,9 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :orders, dependent: :destroy
 
+  # has_many :sold_posts, class_name: "Post", foreign_key: "seller_id", dependent: :destroy
+  # has_many :bought_posts, class_name: "Post", foreign_key: "buyer_id", dependent: :destroy
+
   has_many :relationships, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy
   has_many :reverse_of_relationships, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
   has_many :followings, through: :relationships, source: :followed
