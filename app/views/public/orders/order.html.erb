@@ -29,7 +29,7 @@
          <tr>
           <td colspan="3">
             <div class="explanation">
-              <%= form_with model: @order, url: post_orders_path, local: true do |f| %>
+              <%= form_with model: @order, url: post_orders_path, local: true, class: "text-right" do |f| %>
                 <%= f.hidden_field :user_id %>
                 <%= f.hidden_field :post_id, :value => @post.id %>
                 <%= f.submit "購入する" %>
