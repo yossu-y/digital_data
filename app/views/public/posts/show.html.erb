@@ -4,7 +4,8 @@
       <table class="table table-show">
         <tr>
           <td class="text-center">
-            <% if current_user == @post.user || current_user == @order.user %>
+            <%# if current_user == @post.user || current_user == @order.user %>
+            <% if current_user == @post.user %>
               <%= image_tag @post.get_image, class: "user-post-img" %>
             <% else %>
               <%= image_tag @post.get_image, class: "post-img" %>

@@ -13,7 +13,7 @@ class Public::PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    @order = Order.find(params[:id])
+    # @order = Order.find(params[:id])
     # @genre = Genre.find(params[:genre_id])
   end
 
@@ -26,7 +26,7 @@ class Public::PostsController < ApplicationController
     if @post.save
       redirect_to posts_path, notice: "出品に成功しました！"
     else
-      @books = Book.all
+      @posts = Post.all
       render "new"
     end
   end
