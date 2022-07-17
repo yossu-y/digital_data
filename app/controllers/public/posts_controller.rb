@@ -13,7 +13,7 @@ class Public::PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    # @order = Order.find(params[:id])
+    @order = Order.find(params[:id])
     # @genre = Genre.find(params[:genre_id])
   end
 
@@ -58,7 +58,7 @@ class Public::PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:name, :introduction, :price, :genre_id, :image, :seller_id, :buyer_id)
+    params.require(:post).permit(:name, :introduction, :price, :genre_id, :image)
   end
 
 end

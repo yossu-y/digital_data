@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     patch "users/withdraw" => "users#withdraw"
     resources :users, only: [:index, :update, :show, :edit] do
       get "orders" => "orders#index"
-      get "orders/:id" => "orders#show", as: "orders_show"
+      get "order/:id" => "orders#show", as: "order_show"
       get "like_posts" => "posts#like_posts", as: "like_posts"
       resource :relationship, only: [:create, :destroy]
       get "followings" => "relationships#followings", as: "followings"
