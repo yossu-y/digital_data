@@ -19,7 +19,7 @@ class Public::OrdersController < ApplicationController
     @user = User.find(params[:user_id])
     @orders = @user.orders.all
     @order_posts = Post.find(@orders.pluck(:post_id))
-    # @order = Order.find(params[:order_id])
+    # au@order = Order.find(params[:order_id])
   end
 
   def show

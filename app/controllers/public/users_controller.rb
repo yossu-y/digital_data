@@ -1,4 +1,5 @@
 class Public::UsersController < ApplicationController
+  before_action :authenticate_user!
 
   def index
     @users = User.all
@@ -38,6 +39,5 @@ class Public::UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:screen_name, :introduction, :profile_image)
   end
-
 
 end
