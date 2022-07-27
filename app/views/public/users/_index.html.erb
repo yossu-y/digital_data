@@ -13,7 +13,7 @@
             <td width="10%"><%= image_tag user.get_profile_image, class: "rounded-circle users-img" %></td>
             <td width="20%"><%= user.screen_name %></td>
             <td><%= user.introduction %></td>
-            <td width="22%"><%= render "public/relationships/btn", user: user %></td>
+            <td width="24%"><%= render "public/relationships/btn", user: user %></td>
           </tr>
         <% end %>
         </tbody>
