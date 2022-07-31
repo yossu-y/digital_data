@@ -5,7 +5,7 @@
       <h3 class="mb-4 mini-title text-center">”<%= @user.name %>”さんの情報編集</h3>
     </div>
 
-      <%= form_with model: @user, method: :patch do |f| %>
+      <%= form_with model: @user, url: admin_user_path(@user), method: :patch do |f| %>
         <div class="form-group row">
           <label class="col-3">会員ID</label>
           <label class="col-3"><%= @user.id %></label>
